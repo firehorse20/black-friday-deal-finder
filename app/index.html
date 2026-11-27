@@ -3,13 +3,56 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Deal List</title>
+<title>Bargain Beacon — Real Black Friday Deals, Checked Today</title>
 <link rel="stylesheet" href="style.css">
 <script type="module" src="main.js"></script>
 </head>
 <body>
-<header><a href="#/">Deal List</a></header>
-<main id="app"></main>
-<footer>Eight Black Friday deals, each with the store, the price and when it was checked.</footer>
+<header class="top">
+  <div class="brand">
+    <span class="logo" aria-hidden="true">&#9679;</span>
+    <div>
+      <h1>Bargain Beacon</h1>
+      <p class="tagline">Real Black Friday &amp; Cyber Monday deals — every price checked at the store, 27 Nov 2026.</p>
+    </div>
+  </div>
+  <p class="stats" id="stats"></p>
+</header>
+<section class="controls" aria-label="Find a deal">
+  <label class="search">
+    <span class="visually-hidden">Search deals</span>
+    <input id="q" type="search" placeholder="Search a product, brand or store…" autocomplete="off">
+  </label>
+  <label>Category
+    <select id="category"></select>
+  </label>
+  <label>Store
+    <select id="store"></select>
+  </label>
+  <label>Min. discount
+    <select id="mindisc">
+      <option value="0">Any discount</option>
+      <option value="20">20% off or more</option>
+      <option value="30">30% off or more</option>
+      <option value="40">40% off or more</option>
+      <option value="50">50% off or more</option>
+    </select>
+  </label>
+  <label>Sort
+    <select id="sort">
+      <option value="best">Best deals first</option>
+      <option value="discount">Biggest discount</option>
+      <option value="price-asc">Lowest price</option>
+      <option value="price-desc">Highest price</option>
+      <option value="savings">Biggest saving ($)</option>
+    </select>
+  </label>
+</section>
+<main id="app" aria-live="polite"></main>
+<footer>
+  <p>Prices checked 27 Nov 2026 at the named stores and deals sources. Discounts are computed from the sale
+  price and the usual price shown. Prices change — confirm the price at the store before you buy.</p>
+  <p>Bargain Beacon is an independent deal finder. Store names belong to their owners; links go to the stores.</p>
+</footer>
 </body>
 </html>
